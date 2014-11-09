@@ -25,7 +25,7 @@ int stacker(Box *pile[], int size, int topBox, int thisBox, int h)
      )
     {
         return max(stacker(pile, size, topBox, (thisBox+1), h),
-                (stacker(pile, size, thisBox, (thisBox+1), (h+(*pile)[thisBox].hgt))));
+                stacker(pile, size, thisBox, (thisBox+1), (h+(*pile)[thisBox].hgt)));
     }
     else
         return stacker(pile, size, topBox, ++thisBox, h);
